@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>Калькулятор прибыли Kaspi</title>
+  <style>
+    :root{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#172033;background:#f5f7fb;font-synthesis:none;text-rendering:optimizeLegibility}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 14% 0%,#e4efff 0,transparent 34%),#f5f7fb}.wrap{max-width:1120px;margin:0 auto;padding:52px 24px 42px}.top{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:30px}.brand{display:flex;align-items:center;gap:13px}.mark{width:44px;height:44px;border-radius:14px;background:#149b66;color:#fff;display:grid;place-items:center;font-weight:800;font-size:17px;box-shadow:0 7px 18px #149b6633}.eyebrow{font-size:12px;letter-spacing:.11em;text-transform:uppercase;color:#718097;font-weight:750;margin-bottom:5px}.brand h1{font-size:23px;letter-spacing:-.04em;margin:0}.reset{border:1px solid #dfe5ee;background:#fff;border-radius:11px;padding:10px 14px;font-size:13px;font-weight:650;color:#526078;cursor:pointer}.reset:hover{background:#f9fafc;border-color:#c8d2e0}.intro{margin:0 0 27px;color:#647188;font-size:14px;line-height:1.55}.layout{display:grid;grid-template-columns:1.08fr .92fr;gap:20px;align-items:start}.card{background:#fff;border:1px solid #e6eaf0;border-radius:18px;box-shadow:0 8px 28px #263a5b08}.inputs{padding:23px 24px 22px}.card-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:19px}.card-head h2{font-size:16px;margin:0;letter-spacing:-.02em}.sub{color:#8691a3;font-size:12px}.section-label{font-size:11px;color:#96a0af;font-weight:750;letter-spacing:.09em;text-transform:uppercase;margin:22px 0 11px}.section-label:first-of-type{margin-top:0}.fields{display:grid;grid-template-columns:1fr 1fr;gap:13px 14px}.field{min-width:0}.field label{display:flex;justify-content:space-between;gap:8px;color:#526078;font-size:12px;font-weight:650;margin:0 0 7px}.unit{color:#97a2b1;font-weight:500}.control{position:relative}.control input{width:100%;height:43px;border:1px solid #e1e6ed;border-radius:10px;background:#fbfcfe;padding:0 39px 0 12px;font:600 14px inherit;font-size:14px;color:#172033;outline:none;transition:.15s}.control input:focus{background:#fff;border-color:#149b66;box-shadow:0 0 0 3px #149b6618}.control .suffix{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:12px;color:#98a2b2;pointer-events:none}.field.wide{grid-column:1/-1}.field.total input{background:#f2fbf6;color:#10784e;border-color:#dcefe5}.hint{font-size:11px;color:#8a95a5;line-height:1.45;margin-top:6px}.summary{padding:24px;background:#142236;color:white;overflow:hidden;position:relative}.summary:before{content:"";position:absolute;width:250px;height:250px;border-radius:50%;right:-95px;top:-130px;background:#1699661c}.summary .card-head{position:relative;margin-bottom:23px}.summary .card-head h2{color:#f4f7fb}.summary .sub{color:#a5b1c1}.profit-label{font-size:12px;color:#aab7c7;margin-bottom:8px}.profit{font-size:clamp(34px,5vw,45px);line-height:1.05;letter-spacing:-.055em;font-weight:760;color:#70e0aa;font-variant-numeric:tabular-nums}.profit.negative{color:#ff9d9d}.profit small{font-size:18px;letter-spacing:0;font-weight:600}.profit-note{font-size:12px;color:#9eacbd;margin-top:10px}.divider{height:1px;background:#ffffff18;margin:22px 0}.rows{display:grid;gap:13px}.row{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:#b4c0cf}.row strong{font-size:13px;color:#f4f6f9;font-weight:650;font-variant-numeric:tabular-nums;text-align:right}.row.total{padding-top:13px;border-top:1px solid #ffffff18;color:#f5f7fa}.row.total strong{color:#f5f7fa}.margin-box{margin-top:20px;padding:14px 15px;border-radius:12px;background:#ffffff0d;display:flex;justify-content:space-between;align-items:center}.margin-box span{font-size:12px;color:#aab7c7}.margin-box strong{font-size:17px;color:#fff;font-variant-numeric:tabular-nums}.explain{padding:17px 20px;margin-top:18px}.explain h3{font-size:12px;margin:0 0 9px;color:#56647a}.explain p{font-size:12px;line-height:1.6;color:#8390a2;margin:0}.foot{margin-top:18px;color:#99a3b1;font-size:11px;line-height:1.5}.foot b{color:#727e8f}.live{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:#149b66;font-weight:700}.live i{width:7px;height:7px;border-radius:99px;background:#22b779;box-shadow:0 0 0 3px #22b77920}@media(max-width:760px){.wrap{padding:28px 16px}.layout{grid-template-columns:1fr}.top{margin-bottom:22px}.inputs,.summary{padding:20px}.brand h1{font-size:20px}}@media(max-width:420px){.fields{grid-template-columns:1fr}.field.wide{grid-column:auto}.top{align-items:flex-start}.reset{padding:9px 10px;font-size:12px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="top">
+      <div class="brand"><div class="mark">K</div><div><div class="eyebrow">Kaspi · экономика товара</div><h1>Калькулятор прибыли</h1></div></div>
+      <button class="reset" id="reset" type="button">Сбросить значения</button>
+    </header>
+    <p class="intro">Измените параметры товара и продаж. Расчёты обновляются сразу, без дополнительных действий.</p>
+    <div class="layout">
+      <section class="card inputs" aria-labelledby="inputs-title">
+        <div class="card-head"><h2 id="inputs-title">Параметры расчёта</h2><span class="live"><i></i>Автопересчёт</span></div>
+        <div class="section-label">Закупка</div>
+        <div class="fields">
+          <div class="field"><label for="buyPrice">Закупочная цена <span class="unit">за 1 шт.</span></label><div class="control"><input id="buyPrice" type="number" min="0" step="1" value="339" inputmode="decimal"><span class="suffix">₸</span></div></div>
+          <div class="field"><label for="quantity">Количество <span class="unit">в закупке</span></label><div class="control"><input id="quantity" type="number" min="0" step="1" value="35" inputmode="numeric"><span class="suffix">шт.</span></div></div>
+          <div class="field"><label for="weightCost">Стоимость веса <span class="unit">на всю закупку</span></label><div class="control"><input id="weightCost" type="number" min="0" step="1" value="231" inputmode="decimal"><span class="suffix">₸</span></div></div>
+          <div class="field total"><label for="purchaseTotal">Общая сумма покупки <span class="unit">редактируемая</span></label><div class="control"><input id="purchaseTotal" type="number" min="0" step="1" value="12096" inputmode="decimal"><span class="suffix">₸</span></div><div class="hint">Цена × количество + вес. При изменении суммы пересчитается цена за штуку.</div></div>
+        </div>
+        <div class="section-label">Продажа и расходы</div>
+        <div class="fields">
+          <div class="field"><label for="sellQuantity">Количество на продажу</label><div class="control"><input id="sellQuantity" type="number" min="0" step="1" value="2" inputmode="numeric"><span class="suffix">шт.</span></div></div>
+          <div class="field"><label for="sellPrice">Цена продажи <span class="unit">за 1 шт.</span></label><div class="control"><input id="sellPrice" type="number" min="0" step="1" value="999" inputmode="decimal"><span class="suffix">₸</span></div></div>
+          <div class="field"><label for="commission">Комиссия Kaspi</label><div class="control"><input id="commission" type="number" min="0" max="100" step="0.1" value="12.5" inputmode="decimal"><span class="suffix">%</span></div></div>
+          <div class="field"><label for="tax">Налог на доход</label><div class="control"><input id="tax" type="number" min="0" max="100" step="0.1" value="4" inputmode="decimal"><span class="suffix">%</span></div></div>
+          <div class="field"><label for="deliveries">Количество доставок</label><div class="control"><input id="deliveries" type="number" min="0" step="1" value="2" inputmode="numeric"><span class="suffix">шт.</span></div></div>
+          <div class="field"><label for="deliveryPrice">Цена одной доставки</label><div class="control"><input id="deliveryPrice" type="number" min="0" step="1" value="200" inputmode="decimal"><span class="suffix">₸</span></div></div>
+        </div>
+      </section>
+      <div>
+        <section class="card summary" aria-labelledby="summary-title" aria-live="polite">
+          <div class="card-head"><h2 id="summary-title">Результат</h2><span class="sub" id="soldLabel">2 шт. продано</span></div>
+          <div class="profit-label">Чистая прибыль</div><div class="profit" id="profit">0 <small>₸</small></div><div class="profit-note" id="profitNote">После комиссии, налога и доставок</div>
+          <div class="divider"></div>
+          <div class="rows">
+            <div class="row"><span>Выручка</span><strong id="revenue">—</strong></div>
+            <div class="row"><span>Себестоимость проданных товаров</span><strong id="cogs">—</strong></div>
+            <div class="row"><span>Комиссия Kaspi</span><strong id="commissionCost">—</strong></div>
+            <div class="row"><span>Налог на доход</span><strong id="taxCost">—</strong></div>
+            <div class="row"><span>Доставка</span><strong id="deliveryCost">—</strong></div>
+            <div class="row total"><span>Всего расходов</span><strong id="totalCosts">—</strong></div>
+          </div>
+          <div class="margin-box"><span>Рентабельность продаж</span><strong id="margin">—</strong></div>
+        </section>
+        <section class="card explain"><h3>Как считается</h3><p>Себестоимость одной штуки — общая сумма покупки, делённая на количество в закупке. Из выручки вычитаются себестоимость проданных товаров, комиссия, налог и стоимость всех доставок.</p></section>
+        <div class="foot"><b>Пример перенесён из вашей таблицы.</b> Комиссия и налог считаются от цены продажи каждого товара; доставка — по указанной цене за каждую доставку.</div>
+      </div>
+    </div>
+  </main>
+  <script>
+    (()=>{
+      const ids=['buyPrice','quantity','weightCost','purchaseTotal','sellQuantity','sellPrice','commission','tax','deliveries','deliveryPrice'];
+      const el=Object.fromEntries(ids.map(id=>[id,document.getElementById(id)]));
+      const money=new Intl.NumberFormat('ru-RU',{maximumFractionDigits:2});
+      let syncing=false;
+      const val=id=>Math.max(0,Number(el[id].value)||0);
+      const fmt=n=>money.format(Math.round((n+Number.EPSILON)*100)/100)+' ₸';
+      function render(){
+        const q=val('quantity'), sold=val('sellQuantity'), price=val('buyPrice'), weight=val('weightCost');
+        if(!syncing){ syncing=true; el.purchaseTotal.value=String(Math.round((price*q+weight)*100)/100); syncing=false; }
+        const total=val('purchaseTotal');
+        const revenue=val('sellPrice')*sold;
+        const cogs=q>0?total*Math.min(sold,q)/q:0;
+        const comm=val('sellPrice')*sold*val('commission')/100;
+        const tax=val('sellPrice')*sold*val('tax')/100;
+        const ship=val('deliveries')*val('deliveryPrice');
+        const costs=cogs+comm+tax+ship;
+        const profit=revenue-costs;
+        document.getElementById('profit').innerHTML=fmt(profit).replace(' ₸','')+' <small>₸</small>';
+        document.getElementById('profit').classList.toggle('negative',profit<0);
+        document.getElementById('profitNote').textContent=profit<0?'Расходы превышают выручку':'После комиссии, налога и доставок';
+        document.getElementById('soldLabel').textContent=money.format(sold)+' '+(sold===1?'шт. продано':'шт. продано');
+        document.getElementById('revenue').textContent=fmt(revenue);
+        document.getElementById('cogs').textContent='− '+fmt(cogs);
+        document.getElementById('commissionCost').textContent='− '+fmt(comm);
+        document.getElementById('taxCost').textContent='− '+fmt(tax);
+        document.getElementById('deliveryCost').textContent='− '+fmt(ship);
+        document.getElementById('totalCosts').textContent=fmt(costs);
+        document.getElementById('margin').textContent=revenue>0?money.format(profit/revenue*100)+'%':'—';
+      }
+      ['buyPrice','quantity','weightCost','sellQuantity','sellPrice','commission','tax','deliveries','deliveryPrice'].forEach(id=>el[id].addEventListener('input',render));
+      el.purchaseTotal.addEventListener('input',()=>{
+        if(syncing)return;
+        if(el.purchaseTotal.value==='')return;
+        syncing=true;
+        const q=val('quantity');
+        if(q>0)el.buyPrice.value=String(Math.max(0,(val('purchaseTotal')-val('weightCost'))/q));
+        syncing=false; render();
+      });
+      document.getElementById('reset').addEventListener('click',()=>{
+        const defaults={buyPrice:339,quantity:35,weightCost:231,purchaseTotal:12096,sellQuantity:2,sellPrice:999,commission:12.5,tax:4,deliveries:2,deliveryPrice:200};
+        Object.entries(defaults).forEach(([id,v])=>el[id].value=v);render();
+      });
+      render();
+    })();
+  </script>
+</body>
+</html>
